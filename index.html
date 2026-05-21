@@ -25,6 +25,7 @@
       justify-content:center;
       align-items:center;
       padding:20px;
+      overflow-x:hidden;
     }
 
     .container{
@@ -200,13 +201,15 @@
       </p>
 
       <div class="buttons">
-        <a href="#" class="btn btn-primary">
+
+        <button class="btn btn-primary" onclick="openChat()">
           Abrir Atendimento
-        </a>
+        </button>
 
         <a href="#" class="btn btn-secondary">
           Saiba Mais
         </a>
+
       </div>
 
     </div>
@@ -263,9 +266,29 @@
   <!-- BOTPRESS -->
   <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 
-  
-<script src="https://files.bpcontent.cloud/2026/05/21/09/20260521090419-HVIPC6LG.js" defer></script>
-    
+  <script>
+    window.botpressWebChat = {
+      botName: "Assistente Virtual IGL Lubango",
+      botDescription: "Atendimento inteligente da Secretaria",
+      botConversationDescription: "Secretaria IGL Lubango",
+      hideWidget: false,
+      showCloseButton: true,
+      disableAnimations: false,
+      closeOnEscape: false,
+      enableTranscriptDownload: false
+    };
+
+    function openChat() {
+      if (window.botpress && window.botpress.open) {
+        window.botpress.open();
+      }
+    }
+  </script>
+
+  <script
+    src="https://files.bpcontent.cloud/2026/05/21/09/20260521090419-HVIPC6LG.js"
+    defer>
+  </script>
 
 </body>
 </html>
