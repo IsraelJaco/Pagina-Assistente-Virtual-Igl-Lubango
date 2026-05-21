@@ -3,227 +3,195 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Assistente Virtual - IGL Lubango</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+    body{
+      background:linear-gradient(135deg,#0f172a,#1e3a8a);
+      color:white;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+    .container{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
     }
 
-    .left {
-      animation: fadeIn 1s ease;
+    .left{
+      animation:fadeIn 1s ease;
     }
 
-    .left h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-      line-height: 1.2;
+    .left h1{
+      font-size:52px;
+      margin-bottom:20px;
+      line-height:1.2;
     }
 
-    .left span {
-      color: #38bdf8;
+    .left span{
+      color:#38bdf8;
     }
 
-    .left p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #dbeafe;
-      margin-bottom: 30px;
+    .left p{
+      font-size:18px;
+      line-height:1.8;
+      color:#dbeafe;
+      margin-bottom:30px;
     }
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
     }
 
-    .btn {
-      padding: 14px 28px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-      text-decoration: none;
-      font-weight: bold;
+    .btn{
+      padding:14px 28px;
+      border-radius:10px;
+      border:none;
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s;
+      text-decoration:none;
+      font-weight:bold;
     }
 
-    .btn-primary {
-      background: #38bdf8;
-      color: #0f172a;
+    .btn-primary{
+      background:#38bdf8;
+      color:#0f172a;
     }
 
-    .btn-primary:hover {
-      background: #0ea5e9;
-      transform: translateY(-3px);
+    .btn-primary:hover{
+      background:#0ea5e9;
+      transform:translateY(-3px);
     }
 
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid #38bdf8;
-      color: white;
+    .btn-secondary{
+      background:transparent;
+      border:2px solid #38bdf8;
+      color:white;
     }
 
-    .btn-secondary:hover {
-      background: #38bdf8;
-      color: #0f172a;
+    .btn-secondary:hover{
+      background:#38bdf8;
+      color:#0f172a;
     }
 
-    .chat-box {
-      background: rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-      animation: slideUp 1s ease;
+    .info-box{
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      border-radius:20px;
+      padding:30px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+      animation:slideUp 1s ease;
     }
 
-    .chat-header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
+    .info-box h2{
+      margin-bottom:20px;
+      color:#38bdf8;
+      font-size:28px;
     }
 
-    .chat-header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 3px solid #38bdf8;
+    .info-box p{
+      line-height:1.8;
+      color:#e2e8f0;
+      margin-bottom:15px;
     }
 
-    .chat-header h2 {
-      font-size: 22px;
+    .features{
+      margin-top:20px;
     }
 
-    .chat-messages {
-      height: 320px;
-      overflow-y: auto;
-      background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 15px;
-      margin-bottom: 20px;
+    .features div{
+      margin-bottom:15px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#dbeafe;
     }
 
-    .message {
-      margin-bottom: 15px;
-      padding: 12px 15px;
-      border-radius: 12px;
-      max-width: 85%;
-      line-height: 1.5;
-      font-size: 15px;
+    .features i{
+      color:#38bdf8;
+      font-size:18px;
     }
 
-    .bot {
-      background: #1d4ed8;
+    .footer{
+      position:fixed;
+      bottom:10px;
+      width:100%;
+      text-align:center;
+      color:#cbd5e1;
+      font-size:14px;
     }
 
-    .user {
-      background: #38bdf8;
-      color: #0f172a;
-      margin-left: auto;
-    }
-
-    .chat-input {
-      display: flex;
-      gap: 10px;
-    }
-
-    .chat-input input {
-      flex: 1;
-      padding: 14px;
-      border: none;
-      border-radius: 12px;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .chat-input button {
-      background: #38bdf8;
-      border: none;
-      padding: 14px 20px;
-      border-radius: 12px;
-      cursor: pointer;
-      color: #0f172a;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    .chat-input button:hover {
-      background: #0ea5e9;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      color: #cbd5e1;
-      font-size: 14px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateX(-30px);
       }
-      to {
-        opacity: 1;
-        transform: translateX(0);
+
+      to{
+        opacity:1;
+        transform:translateX(0);
       }
     }
 
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
+    @keyframes slideUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      to{
+        opacity:1;
+        transform:translateY(0);
       }
     }
 
-    @media(max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
+    @media(max-width:900px){
+
+      .container{
+        grid-template-columns:1fr;
       }
 
-      .left h1 {
-        font-size: 38px;
+      .left h1{
+        font-size:38px;
       }
+
     }
+
   </style>
 </head>
+
 <body>
 
   <div class="container">
 
+    <!-- LADO ESQUERDO -->
     <div class="left">
-      <h1>Assistente Virtual da <span>Secretaria IGL Lubango</span></h1>
+
+      <h1>
+        Assistente Virtual da
+        <span>Secretaria IGL Lubango</span>
+      </h1>
 
       <p>
         Plataforma inteligente desenvolvida para responder dúvidas,
@@ -232,78 +200,72 @@
       </p>
 
       <div class="buttons">
-        <a href="#chat" class="btn btn-primary">Começar Atendimento</a>
-        <a href="#" class="btn btn-secondary">Saiba Mais</a>
+        <a href="#" class="btn btn-primary">
+          Abrir Atendimento
+        </a>
+
+        <a href="#" class="btn btn-secondary">
+          Saiba Mais
+        </a>
       </div>
+
     </div>
 
-    <div class="chat-box" id="chat">
+    <!-- LADO DIREITO -->
+    <div class="info-box">
 
-      <div class="chat-header">
-        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Bot">
+      <h2>🤖 Atendimento Inteligente</h2>
+
+      <p>
+        O Assistente Virtual do IGL Lubango utiliza inteligência artificial
+        para responder perguntas relacionadas à secretaria académica.
+      </p>
+
+      <div class="features">
 
         <div>
-          <h2>Assistente Virtual</h2>
-          <small>Online Agora</small>
-        </div>
-      </div>
-
-      <div class="chat-messages" id="messages">
-
-        <div class="message bot">
-          Olá 👋 Seja bem-vindo ao assistente virtual da Secretaria do IGL Lubango. Como posso ajudar?
+          <i class="fa-solid fa-check"></i>
+          Informações sobre matrículas
         </div>
 
-        <div class="message user">
-          Quero saber os horários das aulas.
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Consulta de horários
         </div>
 
-        <div class="message bot">
-          Os horários podem ser consultados diretamente na secretaria ou futuramente aqui no sistema.
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Informações sobre propinas
         </div>
 
-      </div>
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Cursos disponíveis
+        </div>
 
-      <div class="chat-input">
-        <input type="text" id="input" placeholder="Digite sua dúvida...">
-        <button onclick="sendMessage()">
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
+        <div>
+          <i class="fa-solid fa-check"></i>
+          Atendimento automático 24h
+        </div>
+
       </div>
 
     </div>
 
   </div>
 
+  <!-- RODAPÉ -->
   <div class="footer">
-    © 2026 - Assistente Virtual IGL Lubango | Desenvolvido por Israel Jaco
+    © 2026 - Assistente Virtual IGL Lubango |
+    Desenvolvido por Israel Jaco
   </div>
 
-  <script>
-    function sendMessage() {
-      const input = document.getElementById('input');
-      const messages = document.getElementById('messages');
+  <!-- BOTPRESS -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 
-      if(input.value.trim() !== '') {
-
-        const userMessage = document.createElement('div');
-        userMessage.classList.add('message', 'user');
-        userMessage.textContent = input.value;
-        messages.appendChild(userMessage);
-
-        setTimeout(() => {
-          const botMessage = document.createElement('div');
-          botMessage.classList.add('message', 'bot');
-          botMessage.textContent = 'Obrigado pela sua mensagem. Em breve o sistema inteligente responderá automaticamente.';
-          messages.appendChild(botMessage);
-
-          messages.scrollTop = messages.scrollHeight;
-        }, 1000);
-
-        input.value = '';
-        messages.scrollTop = messages.scrollHeight;
-      }
-    }
+  <script
+    src="https://files.bpcontent.cloud/2026/05/21/09/20260521090419-HVIPC6LG.js"
+    defer>
   </script>
 
 </body>
