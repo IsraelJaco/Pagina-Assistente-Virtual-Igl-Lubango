@@ -1,0 +1,203 @@
+<!-- ==========================================================
+     RODAPÉ DA PÁGINA
+     Esta área aparece na parte inferior da página.
+     É utilizada para mostrar informações como direitos autorais
+     e o nome do desenvolvedor.
+=========================================================== -->
+<div class="footer">
+
+    <!-- Símbolo de Copyright -->
+    © 2026 - Assistente Virtual IGL Lubango |
+
+    <!-- Nome do desenvolvedor -->
+    Desenvolvido por Israel Jaco
+
+</div>
+
+
+
+<!-- ==========================================================
+     IMPORTAÇÃO DA BIBLIOTECA DO BOTPRESS
+
+     Este script é responsável por carregar toda a biblioteca
+     do chatbot.
+
+     Sem este arquivo, o chatbot NÃO funciona.
+
+     Quando a página termina de carregar, o navegador faz o
+     download deste JavaScript diretamente do servidor da
+     Botpress.
+
+     Esse arquivo cria o objeto:
+
+            window.botpress
+
+     que será utilizado para controlar o chatbot.
+=========================================================== -->
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+
+
+
+<script>
+
+    /* ==========================================================
+       CONFIGURAÇÕES DO CHATBOT
+
+       Aqui definimos algumas opções de aparência do chat.
+
+       Essas configurações são lidas pela biblioteca do Botpress
+       durante a inicialização.
+    ========================================================== */
+
+    window.botpressWebChat = {
+
+        /* Nome apresentado no topo da janela do chat */
+        botName: "Assistente Virtual IGL Lubango",
+
+        /* Pequena descrição do assistente */
+        botDescription: "Atendimento inteligente da Secretaria",
+
+        /* Texto mostrado na conversa */
+        botConversationDescription: "Secretaria IGL Lubango",
+
+        /*
+
+        false = o ícone do chat fica visível.
+
+        true = o chat fica escondido até ser aberto
+        pelo JavaScript.
+
+        */
+        hideWidget: false,
+
+        /*
+
+        Mostra o botão X para fechar o chat.
+
+        true = mostra.
+
+        false = esconde.
+
+        */
+        showCloseButton: true,
+
+        /*
+
+        Controla as animações do chatbot.
+
+        false = animações activadas.
+
+        true = sem animações.
+
+        */
+        disableAnimations: false,
+
+        /*
+
+        Permite fechar o chat pressionando ESC.
+
+        false = não fecha.
+
+        true = fecha.
+
+        */
+        closeOnEscape: false,
+
+        /*
+
+        Permite descarregar o histórico da conversa.
+
+        true = aparece botão para descarregar.
+
+        false = não aparece.
+
+        */
+        enableTranscriptDownload: false
+
+    };
+
+
+
+    /* ==========================================================
+       FUNÇÃO openChat()
+
+       Esta função é executada quando o utilizador clica
+       no botão:
+
+             Abrir Atendimento
+
+       O objetivo é abrir a janela do chatbot.
+    ========================================================== */
+
+    function openChat() {
+
+        /*
+
+        Primeiro verificamos se o Botpress terminou
+        de carregar.
+
+        Quando o inject.js termina de carregar,
+        ele cria:
+
+                window.botpress
+
+        Se esse objeto existir, significa que o
+        chatbot já está disponível.
+
+        */
+
+        if (window.botpress && window.botpress.open) {
+
+            /*
+
+            Chama a função open().
+
+            Essa função abre automaticamente
+            a janela do chatbot.
+
+            */
+
+            window.botpress.open();
+
+        }
+
+    }
+
+</script>
+
+
+
+<!-- ==========================================================
+     SCRIPT DO SEU CHATBOT
+
+     Este NÃO é a biblioteca do Botpress.
+
+     É o script exclusivo do seu assistente.
+
+     Esse arquivo contém:
+
+     • ID do chatbot
+     • Configurações
+     • Ligação com a sua conta Botpress
+     • Fluxos
+     • Conhecimento (Knowledge Base)
+     • Integrações
+
+     Quando este arquivo é carregado,
+     ele conecta a página ao chatbot criado
+     na sua conta do Botpress Cloud.
+
+     O atributo "defer" significa:
+
+     - Não executar imediatamente.
+
+     - Esperar o HTML terminar de carregar.
+
+     Depois disso, executar este script.
+
+=========================================================== -->
+
+<script
+    src="https://files.bpcontent.cloud/2026/05/21/09/20260521090419-HVIPC6LG.js"
+    defer>
+</script>
